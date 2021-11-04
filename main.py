@@ -42,5 +42,18 @@ def hello():
         return {'success': True, 'token': h}
     else:
         return redirect("/")
+
+@app.route('/do_order', methods=['POST'])
+def he1o():
+    full_name = request.headers['Fio'] 
+    email = request.headers['Email'] 
+    phone_number = request.headers['Number'] 
+    place = request.headers['Place'] 
+    time = request.headers['Time'] 
+
+    print(full_name, email, phone_number, place, time)
+
+    return "Чмо ебало завали"
+
 if __name__ == "__main__":
     app.run(debug=True)

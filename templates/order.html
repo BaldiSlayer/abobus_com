@@ -5,10 +5,31 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <title>Заказ</title>
 </head>
 <body>
     <input id="fio" placeholder="Ваше ФИО">
-    
+    <input id="email" placeholder="Ваша почта">
+    <input id="number" placeholder="Ваш номер">
+    <input id="time" placeholder="Время">
+
+    <button type="submit" id="submit">Войти</button>
+
+    <script type="text/javascript">
+        document.querySelector("#submit").onclick = function(){
+            var obj = {"fio": fio = document.querySelector('#fio').value, "email": document.querySelector('#email').value,
+            "number": document.querySelector('#number').value,
+            "time": document.querySelector('#time').value, "place": "123 123"};
+            console.log(obj);
+              
+            let response = fetch('/do_order', {
+                method: 'POST',
+                headers: obj,
+            });
+    }
+
+    </script>
 </body>
 </html>

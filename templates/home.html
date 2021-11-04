@@ -49,13 +49,6 @@
     let tip = document.querySelector('#password');
 
     $('#login-form').submit(function (e) {
-        /*e.preventDefault();
-        $('#main').css({'animation': 'blur', 'animation-duration': '0.6s', 'animation-fill-mode': 'both'});
-        $('#footer').css({'animation': 'blur', 'animation-duration': '0.6s', 'animation-fill-mode': 'both'});
-        setTimeout(function () {
-            $('#block-ui').css('display', 'block');
-        }, 600);*/
-
         let data = $('#login-form').serializeArray();
 
         
@@ -71,23 +64,6 @@
                     else {
                         alert('Пароль неверный');
                     }
-
-                    /*setTimeout(function () {
-                        $('#block-ui').css('display', 'none');
-                    }, 600);
-
-                    $('#main').css({
-                        'animation': 'blur',
-                        'animation-duration': '0.6s',
-                        'animation-fill-mode': 'both',
-                        'animation-direction': 'reverse'
-                    });
-                    $('#footer').css({
-                        'animation': 'blur',
-                        'animation-duration': '0.6s',
-                        'animation-fill-mode': 'both',
-                        'animation-direction': 'reverse'
-                    });*/
                 }
             }); 
             
