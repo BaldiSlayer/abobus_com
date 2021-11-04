@@ -4,22 +4,124 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #E5E5E5;
 }
 
-input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+img#Group6 { 
+    position: absolute;
+    left: 850px;
+    top: 200px;
+    height: calc(1.05*489.5px);
+    width: calc(1.05*471px);  
 }
 
-input[type="number"] {
-    -moz-appearance: textfield;
+h1#auth {
+    position: absolute;
+    width: 517px;
+    height: 30px;
+    /*left: 245px;
+    top: 250px;*/
+    left: calc(50% - 517px/2 - 294.5px);
+    top: calc(50% - 30px/2 - 244px + 70px);
+
+    
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 49px;
+    
+    color: #000000;
+}
+
+input#login {
+    position: absolute;
+    width: 578px;
+    height: 62px;
+    /*left: 267px;
+    top: 350px;*/
+    left: calc(50% - 467px/2 - 319.5px);
+    top: calc(50% - 49px/2 - 108.5px + 70px);
+
+    border: 1px solid #2F2F2F;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+input#password {
+    position: absolute;
+    width: 578px;
+    height: 62px;
+    /*left: 267px;
+    top: 500px;*/
+    left: calc(50% - 467px/2 - 319.5px);
+    top: calc(50% - 47px/2 + 3.5px + 70px);
+    
+    border: 1px solid #2F2F2F;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+input[type~="text"], input[type~="password"]{
+    
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 25px;
+    line-height: 30px;
+
+    background-color: #E5E5E5;
+}
+
+button#asjkdaljks {
+    position: absolute;
+    width: 578px;
+    height: 75px;
+    /*left: 267px;
+    top: 617px;*/
+    left: calc(50% - 467px/2 - 319.5px);
+    top: calc(50% - 58px/2 + 153px + 35px);
+    
+    background: #71B7F9;
+    border-radius: 15px;
+}
+
+h1#dot {
+    position: absolute;
+    width: 142px;
+    height: 61px;
+    left: 51px;
+    top: 35px;
+
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 61px;
+
+
+    color: #2F2F2F;    
 }
 
 .form-check {
     width: 100%;
 }
 
+.dot {
+    position: absolute;
+    left: 84px;
+    top: 60px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .no-select {
+    position: absolute;
+    left: 267px;
+    top: 249px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -67,10 +169,6 @@ input[type="number"] {
     background: #f5f5f5;
 }
 
-.iti__flag {
-    background-image: url("flags.png");
-}
-
 @keyframes pulsate {
     0% {
         transform: scale(.1);
@@ -100,11 +198,5 @@ input[type="number"] {
     #phone-form {
         margin-right: 6%;
         margin-left: 6%;
-    }
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .iti__flag {
-        background-image: url("flags@2x.png");
     }
 }
