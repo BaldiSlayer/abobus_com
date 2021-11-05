@@ -1,0 +1,21 @@
+{% block title %} 
+Все заказы 
+{% endblock %} 
+ 
+{% block body %} 
+ 
+<div class="container mt-5"> 
+ 
+    {% for el in data %} 
+    <div class="alert alert-info"> 
+        <h2>Номер заказа: {{el.id}}</h2> 
+        <h2>ФИО: {{el.full_name}}</h2> 
+        <h2>Почта: {{el.email}}</h2> 
+        <h2>Номер телефона: {{el.phone_number}}</h2> 
+        <h2>Место: {{el.place}}</h2> 
+        <h2>Время: {{el.time}}</h2> 
+    </div> 
+    {% endfor %} 
+</div> 
+ 
+{% endblock %}

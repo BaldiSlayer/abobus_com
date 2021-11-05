@@ -1,0 +1,162 @@
+html, body {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E5E5E5 url(../static/home_background1.png);
+}
+
+input[type="text"] {
+    background: transparent;
+    border: none;
+}
+  
+input[type="text"]:focus {
+    outline: none;
+}
+
+.ss {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 36px;
+
+    background: #71B7F9;
+    color: #FFFFFF;
+
+    border-radius: 15px;
+    border: none;
+}
+
+h1#dot {
+    position: absolute;
+    width: 142px;
+    height: 61px;
+    left: 51px;
+    top: 35px;
+
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 61px;
+
+
+    color: #2F2F2F;    
+}
+
+.map {
+    position: absolute;
+
+    left: 850px;
+    top: 100px;
+}
+
+input[type~="text"], input[type~="number"]{
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 25px;
+    line-height: 30px;
+
+    background-color: #E5E5E5;
+
+    padding-left: 15px;
+}
+
+.inp {
+    position: absolute;
+    width: 578px;
+    height: 62px;
+    /*left: 267px;
+    top: 500px;*/
+    
+    border: 1px solid #2F2F2F;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+input#fio {
+    position: absolute;
+    width: 619px;
+    height: 59px;
+    left: calc(202px - 30px);
+    top: calc(247px - 90px);
+}
+
+input#email {
+    position: absolute;
+    width: 619px;
+    height: 59px;
+    left: calc(202px - 30px);
+    top: calc(382px - 90px - 10px);
+}
+
+input#number {
+    position: absolute;
+    width: 619px;
+    height: 59px;
+    left: calc(202px - 30px);
+    top: calc(521px - 90px - 20px);
+}
+
+input#suggest2 {
+    position: absolute;
+    left: 900px;
+    top: calc(247px - 90px);
+
+    position: absolute;
+    width: 550px;
+    height: 59px;
+    /*left: 267px;
+    top: 500px;*/
+    
+    border: 1px solid #2F2F2F;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 25px;
+    line-height: 30px;
+
+    background-color: #E5E5E5;
+
+    padding-left: 15px;
+}
+
+div#map {
+    position: absolute;
+    left: 900px;
+    top: 235px;
+
+    border: 1px solid black;
+}
+
+
+input#time {
+    position: absolute;
+    width: 619px;
+    height: 59px;
+    left: calc(202px - 30px);
+    top: calc(660px - 90px - 30px);
+}
+
+button#submit {
+    position: absolute;
+    width: 619px;
+    height: 75px;
+    left: calc(202px - 30px);
+    top: calc(660px - 90px - 30px + 59px + 60px);
+
+    background: #71B7F9;
+    border-radius: 15px;
+    border: none;
+}
+
+input#address {
+    border: none;
+}

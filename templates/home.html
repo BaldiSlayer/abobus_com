@@ -17,8 +17,11 @@
 <body>
 
 <div id="main">
-    <h1 class="dot" id='dot'>ТОЧКА</h1>
+    <h1 class="dot" id='dot'>ТОЧКА МЕНЕДЖЕР</h1>
     <h1 class="no-select" id="auth">Авторизация в системе</h1>
+
+    <ellipse cx="400" cy="0" rx="100" ry="50" fill="yellow"></ellipse>
+
     <form action="/login" id="login-form" method="post">
         <div class="form-row">
             <input aria-describedby="login" type="text" class="form-control" id="login" name="login" placeholder="Логин">
@@ -59,7 +62,7 @@
                 success: function (response) {
                     if (response['success']) {
                         token = response['token']
-                        document.location += 'account/' + token
+                        document.location = 'account/' + token
                     }
                     else {
                         alert('Пароль неверный');

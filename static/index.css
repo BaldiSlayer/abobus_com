@@ -4,15 +4,15 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #E5E5E5;
+    background: #E5E5E5 url(../static/home_background1.png);
 }
 
 img#Group6 { 
     position: absolute;
     left: 850px;
-    top: 200px;
-    height: calc(1.05*489.5px);
-    width: calc(1.05*471px);  
+    top: 40px;
+    height: calc(0.13*5427px);
+    width: calc(0.135*5000px);  
 }
 
 h1#auth {
@@ -71,6 +71,8 @@ input[type~="text"], input[type~="password"]{
     line-height: 30px;
 
     background-color: #E5E5E5;
+
+    padding-left: 15px;
 }
 
 button#asjkdaljks {
@@ -88,8 +90,8 @@ button#asjkdaljks {
 
 h1#dot {
     position: absolute;
-    width: 142px;
-    height: 61px;
+    /*width: 142px;
+    height: 61px;*/
     left: 51px;
     top: 35px;
 
