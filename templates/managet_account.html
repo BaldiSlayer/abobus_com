@@ -19,6 +19,18 @@
       <h1 id="tasks">Расписание встреч:</h1>
       <img src="../static/Ellipse 9.png" alt="" class="round">
 
+      <div class="asd" style="position: absolute; left: 150px; top: 250px;">
+         {% for el in data %}
+         <div class="alert alert-info">
+            <h2>ФИО: {{el.full_name}}</h2>
+            <h2>Номер телефона: {{el.phone_number}}</h2> 
+            <h2>Место: {{el.place}}</h2> 
+            <h2>Время: {{el.time}}</h2>
+            <h2> </h2>
+         </div> 
+         {% endfor %} 
+      </div>
+
       <div id="map" style="width: 619px; height: 500px; position: absolute; left: 850px; top: 200px; border: 2px solid #2F2F2F;"></div>
    </body>
 </html>

@@ -83,7 +83,7 @@ input#fio {
     width: 619px;
     height: 59px;
     left: calc(202px - 30px);
-    top: calc(247px - 90px);
+    top: calc(247px - 90px -  1 * 20px);
 }
 
 input#email {
@@ -91,7 +91,7 @@ input#email {
     width: 619px;
     height: 59px;
     left: calc(202px - 30px);
-    top: calc(382px - 90px - 10px);
+    top: calc(382px - 90px - 10px - 2 * 20px);
 }
 
 input#number {
@@ -99,13 +99,29 @@ input#number {
     width: 619px;
     height: 59px;
     left: calc(202px - 30px);
-    top: calc(521px - 90px - 20px);
+    top: calc(521px - 90px - 20px - 3 * 20px);
+}
+
+input#time {
+    position: absolute;
+    width: 619px;
+    height: 59px;
+    left: calc(202px - 30px);
+    top: calc(660px - 90px - 30px - 4 * 20px);
+}
+
+input#kiss_my_ass {
+    position: absolute;
+    width: 619px;
+    height: 59px;
+    left: calc(202px - 30px);
+    top: calc(660px - 90px + 95px - 5 * 20px);
 }
 
 input#suggest2 {
     position: absolute;
     left: 900px;
-    top: calc(247px - 90px);
+    top: calc(247px - 90px -  1 * 20px);
 
     position: absolute;
     width: 550px;
@@ -113,7 +129,7 @@ input#suggest2 {
     /*left: 267px;
     top: 500px;*/
     
-    border: 1px solid #2F2F2F;
+    border: none;
     box-sizing: border-box;
     border-radius: 10px;
 
@@ -131,18 +147,9 @@ input#suggest2 {
 div#map {
     position: absolute;
     left: 900px;
-    top: 235px;
+    top: calc(382px - 90px - 10px - 2 * 20px);;
 
     border: 1px solid black;
-}
-
-
-input#time {
-    position: absolute;
-    width: 619px;
-    height: 59px;
-    left: calc(202px - 30px);
-    top: calc(660px - 90px - 30px);
 }
 
 button#submit {

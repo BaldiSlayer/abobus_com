@@ -1,5 +1,5 @@
 {% block title %} 
-Все заказы 
+Все заказы
 {% endblock %} 
  
 {% block body %} 
@@ -14,6 +14,8 @@
         <h2>Номер телефона: {{el.phone_number}}</h2> 
         <h2>Место: {{el.place}}</h2> 
         <h2>Время: {{el.time}}</h2> 
+        <h2>Юзаем?: {{el.last}}</h2>
+        <h2>Менеджер: {{el.manager}}</h2>
     </div> 
     {% endfor %} 
 </div> 

@@ -26,12 +26,12 @@
     <input id="time" class="inp" type="text" placeholder="Время">
     <input type="text" id="suggest1" class="input" placeholder="Введите адрес отправления" value="Москва, улица Верхняя Радищевская, дом 2/1, строение 3" hidden=true>
     <input type="address" id="suggest2" class="input" placeholder="Введите адрес назначения" value="Москва, улица Верхняя Радищевская, дом 2/1, строение 3">
-
+    <input id="kiss_my_ass" class="inp" type="text" placeholder="Цель встречи">
 
     <div id="map" style="width: 619px; height: 500px; border: 2px solid #2F2F2F;"></div>
 
     <button class="ss" type="submit" id="submit">Подтвердить</button>
-    <button class="ss" type="get" id="get" style="position: absolute; left: 1455px; top: 155px; width: 65px; height: 65px;">🔎</button>
+    <button class="ss" type="get" id="get" style="position: absolute; left: 1455px; top: calc(247px - 90px - 20px); width: 62px; height: 62px;">🔎</button>
 
     </script>
 
@@ -43,14 +43,14 @@
             console.log(e);
 
             if (!e) {
-                alert("Ты еблан? Это не почта");
+                alert("Это не почта");
             }
             else {              
                 let response = fetch('/do_order', {
                     method: 'POST',
                     headers: {"fio": fio = document.querySelector('#fio').value, "email": document.querySelector('#email').value,
                     "number": document.querySelector('#number').value,
-                    "time": document.querySelector('#time').value, "place": a()},
+                    "time": document.querySelector('#time').value, "place": a(), "type": document.querySelector('#kiss_my_ass').value},
                 });
             }
         }

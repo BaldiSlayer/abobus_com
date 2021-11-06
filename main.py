@@ -4,16 +4,25 @@ from flask_sqlalchemy import SQLAlchemy
 
 online_users = {}
 
-USERS = {"admin": "admin"}
+MANAGERS = {"manager1": "123456", "manager2": "123456789", "manager3":  "123456",
+"manager4":  "123456",
+"manager5":  "123456",
+"manager6":  "123456",
+"manager7":  "123456",
+"manager8":  "123456",
+"manager9":  "123456",
+"manager10":  "123456"}
 
 def generate_random_string(length):
     return ''.join(random.choice(string.ascii_lowercase + string.ascii_uppercase + '0123456789') for i in range(length))
 
 def auth(l, p):
     if l == 'admin' and p == 'admin':
-        return True
+        return 2
 
-    return False
+    return MANAGERS[l] == p
+
+    return 0
 
 app = Flask(__name__)
 
@@ -29,6 +38,7 @@ class Order(db_order.Model):
     time = db_order.Column(db_order.String(322)) #переделать в int
     manager = db_order.Column(db_order.Integer)
     last = db_order.Column(db_order.Integer) #если 1 - не обрабатываем
+    type = db_order.Column(db_order.String(322))
 
     def __repr__(self):
         return '<Order %r>' % self.id
@@ -41,10 +51,24 @@ def home():
 
 @app.route("/account/<token>")
 def about(token):
+    if online_users[token][0] == 'admin':
+        return render_template('admin.html')
+
+    id_kenta = list(MANAGERS).index(online_users[token][0])
+
+    __data__ = []
+
+    database = Order.query.all() 
+    for i in range(1, len(database) + 1): 
+        data = Order.query.get(i)
+
+        if data.manager == id_kenta and data.last == 0:
+            __data__.append(data)
+
     if token in online_users:
-        return render_template('managet_account.html', login=online_users[token][0])
+        return render_template('managet_account.html', login=online_users[token][0], data=__data__)
+
     return 'Ошибка доступа'
-    
 
 @app.route('/')
 def order():
@@ -57,32 +81,67 @@ def hello():
 
     global online_users
 
-    if auth(login, password):
+    sadf = auth(login, password)
+
+    if sadf != 0:
         h = generate_random_string(64)
-        online_users[h] = [login, password]
+        online_users[h] = [login]
         return {'success': True, 'token': h}
     else:
         return redirect("/home")
 
 @app.route('/del') 
 def delete(): 
+    '''data = Order.query.get(1)
+    data.last = 0
+    db_order.session.commit()''' 
+
     database = Order.query.all() 
     for i in range(1, len(database) + 1): 
-        data = Order.query.get(1)
+        data = Order.query.get(i)
 
-        db_order.session.delete(data) 
-        db_order.session.commit() 
+        if data.last == 0:
+            data.last = 1
+
+    db_order.session.commit()  
+
     return {'success': True}
 
-def get_place_from_database():
+def get_data_from_database():
+    lst = []
+
     database = Order.query.all()
     for i in range(1, len(database) + 1):
         data = Order.query.get(i)
-        print(i, data.place, sep=': ')
+
+        if data.last == 0:
+            lst.append([data.id, data.place, data.time])
+
+    return lst
+
+def get_data_from_db():
+    database = Order.query.get(11)
+
+    database.last = 1
+
+    db_order.session.commit()
+
+    database = Order.query.get(12)
+
+    database.last = 1
+
+    db_order.session.commit()
+
+def edit(task_id, worker):
+    database = Order.query.get(task_id)
+    database.manager = worker
+
+    db_order.session.commit()    
 
 @app.route('/all_orders') 
-def orders(): 
-    get_place_from_database()
+def orders():
+    #print(get_data_from_database())
+    #edit(1, -1)
 
     database = Order.query.all()
 
@@ -95,13 +154,13 @@ def he1o():
     phone_number = request.headers['Number'] 
     place = " ".join(str(x) for x in request.headers['Place'].split(","))
     time = request.headers['Time']
+    type_ = request.headers['Type']
 
-    print(full_name, email, phone_number, place, time, sep='\n')
-
-    new_order = Order(full_name=full_name, email=email, phone_number=phone_number, place=place, time=time, manager=-1, last=0)
+    new_order = Order(full_name=full_name, email=email, phone_number=phone_number, place=place, time=time, manager=-1, last=0, type=type_)
     db_order.session.add(new_order)
     db_order.session.commit()
 
+    #algorithm.init()
     return {'success': True}
 
 if __name__ == "__main__":
