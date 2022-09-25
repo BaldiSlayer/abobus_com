@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <!--<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <link href="../static/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/index.css" rel="stylesheet">
+    <link href="../static/intlTelInput.min.css" rel="stylesheet">
+    <title>Вход</title>
+</head>
+<body>
+
+<div id="main">
+    <h1 class="dot" id='dot'>ТОЧКА</h1>
+    <h1 class="no-select" id="auth">Авторизация в системе</h1>
+    <form action="/login" id="login-form" method="post">
+        <div class="form-row">
+            <input aria-describedby="login" type="text" class="form-control" id="login" name="login" placeholder="Логин">
+
+            <input class="form-control" type="password" id="password" name="password" placeholder="Пароль">
+        </div>
+
+
+        <label for="btn btn-primary btn-lg"></label>
+
+        <div class="form-asddasasd">
+          <button id="asjkdaljks" class="btn btn-primary btn-lg" type="submit">Войти</button>
+        </div>
+    </form>
+</div>
+
+<div id="block-ui">
+    <div id="loader"></div>
+</div>
+
+<script src="../static/jquery-3.4.1.min.js"></script>
+<script src="../static/intlTelInput.min.js"></script>
+
+<script type="text/javascript">
+    let input = document.querySelector('#login');
+    let tip = document.querySelector('#password');
+
+    $('#login-form').submit(function (e) {
+        /*e.preventDefault();
+        $('#main').css({'animation': 'blur', 'animation-duration': '0.6s', 'animation-fill-mode': 'both'});
+        $('#footer').css({'animation': 'blur', 'animation-duration': '0.6s', 'animation-fill-mode': 'both'});
+        setTimeout(function () {
+            $('#block-ui').css('display', 'block');
+        }, 600);*/
+
+        let data = $('#login-form').serializeArray();
+
+        
+            let hui = $.ajax({
+                url: '/login',
+                type: 'post',
+                data: data,
+                success: function (response) {
+                    if (response['success']) {
+                        token = response['token']
+                        document.location += 'account/' + token
+                    }
+                    else {
+                        alert('Пароль неверный');
+                    }
+
+                    /*setTimeout(function () {
+                        $('#block-ui').css('display', 'none');
+                    }, 600);
+
+                    $('#main').css({
+                        'animation': 'blur',
+                        'animation-duration': '0.6s',
+                        'animation-fill-mode': 'both',
+                        'animation-direction': 'reverse'
+                    });
+                    $('#footer').css({
+                        'animation': 'blur',
+                        'animation-duration': '0.6s',
+                        'animation-fill-mode': 'both',
+                        'animation-direction': 'reverse'
+                    });*/
+                }
+            }); 
+        
+    });
+</script>
+</body>
+</html>

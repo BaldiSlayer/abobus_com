@@ -1,0 +1,204 @@
+html, body {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E5E5E5 url(../static/home_background1.png);
+}
+
+img#Group6 { 
+    position: absolute;
+    left: 850px;
+    top: 40px;
+    height: calc(0.13*5427px);
+    width: calc(0.135*5000px);  
+}
+
+h1#auth {
+    position: absolute;
+    width: 517px;
+    height: 30px;
+    /*left: 245px;
+    top: 250px;*/
+    left: calc(50% - 517px/2 - 294.5px);
+    top: calc(50% - 30px/2 - 244px + 70px);
+
+    
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 49px;
+    
+    color: #000000;
+}
+
+input#login {
+    position: absolute;
+    width: 578px;
+    height: 62px;
+    /*left: 267px;
+    top: 350px;*/
+    left: calc(50% - 467px/2 - 319.5px);
+    top: calc(50% - 49px/2 - 108.5px + 70px);
+
+    border: 1px solid #2F2F2F;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+input#password {
+    position: absolute;
+    width: 578px;
+    height: 62px;
+    /*left: 267px;
+    top: 500px;*/
+    left: calc(50% - 467px/2 - 319.5px);
+    top: calc(50% - 47px/2 + 3.5px + 70px);
+    
+    border: 1px solid #2F2F2F;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+input[type~="text"], input[type~="password"]{
+    
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 25px;
+    line-height: 30px;
+
+    background-color: #E5E5E5;
+
+    padding-left: 15px;
+}
+
+button#asjkdaljks {
+    position: absolute;
+    width: 578px;
+    height: 75px;
+    /*left: 267px;
+    top: 617px;*/
+    left: calc(50% - 467px/2 - 319.5px);
+    top: calc(50% - 58px/2 + 153px + 35px);
+    
+    background: #71B7F9;
+    border-radius: 15px;
+}
+
+h1#dot {
+    position: absolute;
+    /*width: 142px;
+    height: 61px;*/
+    left: 51px;
+    top: 35px;
+
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 61px;
+
+
+    color: #2F2F2F;    
+}
+
+.form-check {
+    width: 100%;
+}
+
+.dot {
+    position: absolute;
+    left: 84px;
+    top: 60px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.no-select {
+    position: absolute;
+    left: 267px;
+    top: 249px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#phonesHelp {
+    margin-bottom: 5%;
+}
+
+#loader {
+    border: 5px solid #007bff;
+    border-radius: 50%;
+    height: 50px;
+    left: 50%;
+    margin: -15px 0 0 -15px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    animation: pulsate 1s ease-out;
+    animation-iteration-count: infinite;
+    z-index: 1080;
+}
+
+#block-ui {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    z-index: 15;
+    cursor: wait;
+}
+
+.form-check {
+    margin-bottom: 2%;
+}
+
+.footer {
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    background: #f5f5f5;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(.1);
+        opacity: 0.0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes blur {
+    from {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+    }
+    to {
+        -webkit-filter: blur(3px);
+        filter: blur(3px);
+    }
+}
+
+@media screen and (min-width: 250px) and  (max-width: 768px) {
+    #phone-form {
+        margin-right: 6%;
+        margin-left: 6%;
+    }
+}
